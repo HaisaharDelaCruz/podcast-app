@@ -1,10 +1,35 @@
-<h2>Agregar Nuevo Podcast</h2>
-<form (ngSubmit)="agregarPodcast()">
-  <label>Nombre: <input [(ngModel)]="nuevoPodcast.nombre" name="nombre" /></label><br />
-  <label>Descripción: <input [(ngModel)]="nuevoPodcast.descripcion" name="descripcion" /></label><br />
-  <label>Fecha Publicación: <input type="date" [(ngModel)]="nuevoPodcast.fechaPublicacion" name="fechaPublicacion" /></label><br />
-  <label>Fecha Expiración: <input type="date" [(ngModel)]="nuevoPodcast.fechaExpiracion" name="fechaExpiracion" /></label><br />
-  <label>Portada URL: <input [(ngModel)]="nuevoPodcast.portadaURL" name="portadaURL" /></label><br />
-  <label>Género URL: <input [(ngModel)]="nuevoPodcast.generoURL" name="generoURL" /></label><br />
-  <button type="submit">Agregar</button>
+<h2 class="titulo">Agregar Nuevo Podcast</h2>
+
+<form class="formulario" (ngSubmit)="agregarPodcast()">
+  <div class="campo">
+    <label> Nombre</label>
+    <input [(ngModel)]="nuevoPodcast.nombre" name="nombre" required />
+  </div>
+
+  <div class="campo">
+    <label>Descripción</label>
+    <input [(ngModel)]="nuevoPodcast.descripcion" name="descripcion" required />
+  </div>
+
+  <div class="campo">
+    <label>Fecha Publicación</label>
+    <input type="date" [(ngModel)]="nuevoPodcast.fechaPublicacion" name="fechaPublicacion" required />
+  </div>
+
+  <div class="campo">
+    <label>Fecha Expiración</label>
+    <input type="date" [(ngModel)]="nuevoPodcast.fechaExpiracion" name="fechaExpiracion" required />
+  </div>
+
+  <div class="campo">
+    <label>Portada URL</label>
+    <input [(ngModel)]="nuevoPodcast.portadaURL" name="portadaURL" />
+  </div>
+
+  <div class="campo">
+    <label>Género URL</label>
+    <input [(ngModel)]="nuevoPodcast.generoURL" name="generoURL" />
+  </div>
+
+  <button class="boton" type="submit">Agregar</button>
 </form>

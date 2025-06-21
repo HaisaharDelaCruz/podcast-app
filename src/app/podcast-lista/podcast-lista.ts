@@ -15,8 +15,15 @@ export class PodcastLista implements OnInit{
   constructor(private podcastService: PodcastService) {}
 
   ngOnInit(): void {
-    this.podcastService.getPodcasts().subscribe(data => {
-      this.podcasts = data;
+    this.podcastService.getPodcasts().subscribe((data: any[]) => {
+      this.podcasts = data.map(p => ({
+        nombre: p.nombre_Podcast,
+        descripcion: p.descripcion,
+        fechaPublicacion: p.fecha_Publicacion,
+        fechaExpiracion: p.fecha_Expiracion,
+        portadaURL: p.portadaURL,
+        generoURL: p.generoURL
+      }));
     });
   }
 }

@@ -1,6 +1,11 @@
-<h2>Lista de Podcasts</h2>
-<ul>
-    <li *ngFor="let podcast of podcasts">
-        <strong>{{ podcast.nombre  }}</strong> - {{ podcast.descripcion }}
-    </li>
+<h2 class="titulo">Lista de Podcasts</h2>
+
+<ul class="podcast-lista">
+  <li *ngFor="let podcast of podcasts" class="podcast-item">
+    <div class="info">
+      <h3>{{ podcast.nombre }}</h3>
+      <p>{{ podcast.descripcion }}</p>
+      <small>🗓️ {{ podcast.fechaPublicacion | date }} — ⏳ {{ podcast.fechaExpiracion | date }}</small>
+    </div>
+  </li>
 </ul>
